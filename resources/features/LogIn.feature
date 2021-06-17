@@ -13,7 +13,7 @@ Feature: Login functionality
         | Ulugbek   | SuperUlugbek123!|
 
 
-  Scenario Outline: System should authorize user with INVALID credentials
+  Scenario Outline: System shouldn't authorize user with INVALID credentials
 
     Given User is on login page
     When User enters invalid "<Username>" and "<Password>" and clicks SignIn
