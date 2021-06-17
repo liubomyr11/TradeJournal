@@ -7,4 +7,5 @@ public class HomePage {
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    public final String pageTitle = "Transactions";
 }
