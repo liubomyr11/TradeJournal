@@ -7,7 +7,7 @@ Feature: Login functionality
       Then User should be directed to home page
 
       Examples:
-        | Username  | Password |
+        | Username  | Password        |
         | Dmitry    | SuperDmitry123! |
         | Abiba     | SuperAbiba123!  |
         | Ulugbek   | SuperUlugbek123!|
