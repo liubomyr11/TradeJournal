@@ -1,6 +1,5 @@
 package runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty", "html:Reports/htmlReport.html", "json:Reports/jsonReport.json"},
         features = "resources/features",
-        dryRun = false
+        glue = "stepDefinitions",
+        tags = "@Smoke"
 )
-public class Runner {
-
+public class SmokeTestRunners {
 }
