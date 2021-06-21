@@ -26,3 +26,23 @@ Feature: Login functionality
       | Ulugbek   | SuperDmitry123!|
       |!@#$%^&*() | !@#$%^&*()     |
       |!@#$%123456| 1234567#$%^&*  |
+
+    Scenario Outline: System should not authorize user if one or both entry fields is empty
+
+      Given User is on login page
+      When User enters invalid "<Username>" and "<Password>" and clicks SignIn
+      Then User should stay on home page.
+
+      Examples:
+        |Username|   Password     |
+        |        | SuperDmitry123!|
+        | Dmitry |                |
+        |        |                |
+
+      Scenario: All components decribed in User Story should be present on page
+
+        Given User is on login page
+        Then User should see "Please sign in"
+        And  User should see Username input box
+        And  User should see Password input box
+        And User should see Sign in button

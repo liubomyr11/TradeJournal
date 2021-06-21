@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomePage;
 import pages.LoginPage;
+import utils.BrowserUtils;
 import utils.Driver;
 import utils.PropertiesReader;
 
@@ -40,5 +41,26 @@ public class Login_Steps_Definition {
         Assert.assertEquals(loginPage.alertMessage.getText(),message);
     }
 
+    @Then("User should stay on home page.")
+    public void user_should_stay_on_home_page() {
+        BrowserUtils.wait(2);
+        Assert.assertEquals("Please sign in", loginPage.mainLogInHeader.getText());
+    }
+    @Then("User should see {string}")
+    public void user_should_see(String header) {
+        Assert.assertEquals(header, loginPage.mainLogInHeader.getText());
 
+    }
+    @Then("User should see Username input box")
+    public void user_should_see_username_input_box() {
+       Assert.assertTrue(BrowserUtils.isPresent(loginPage.usernameInputBox));
+    }
+    @Then("User should see Password input box")
+    public void user_should_see_password_input_box() {
+        Assert.assertTrue(BrowserUtils.isPresent(loginPage.passwordInputBox));
+    }
+    @Then("User should see Sign in button")
+    public void user_should_see_sign_in_button() {
+        Assert.assertTrue(BrowserUtils.isPresent(loginPage.signInButton));
+    }
 }
