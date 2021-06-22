@@ -63,7 +63,7 @@ homepage.slackChannelTab.isDisplayed();
         BrowserUtils.wait(10);
         Assert.assertEquals(homepage.slackTitle, Driver.getDriver().getTitle());
     }
-
+//fail
     @Then("Tools tab is displayed")
     public void tools_tab_is_displayed() {
 homepage.toolsTab.isDisplayed();
@@ -103,7 +103,7 @@ homepage.converterTab.click();
     public void user_should_be_able_to_navigate_to_vol_etf_etn_price_converter_page() {
 //bug
     }
-
+//pass
     @Then("Symbol search box is displayed")
     public void symbol_search_box_is_displayed() {
 homepage.symbolInput.isDisplayed();
