@@ -13,7 +13,7 @@ public class HomePage {
            }
 
     public final String pageTitle = "Transactions";
-
+    public final String finomTitle ="Finom Group | Site Wide Activity RSS Feed";
     //Created by Beka
     @FindBy(xpath = "//a[text()='Home ']")
     public WebElement labelHome;
@@ -77,7 +77,7 @@ public class HomePage {
     public WebElement gainLossCol;
     @FindBy(css = (" thead tr th:nth-child(8)"))
     public WebElement action2Col;
-    @FindBy(xpath = ("//img[@title='Finom Group']"))
+    @FindBy(xpath = ("//title[text()='Home - Finom Group']"))
     public WebElement finomGroupPageLogo;
     @FindBy(xpath = ("//head[@id='head']/title"))
     public WebElement calculatorPageLogo;

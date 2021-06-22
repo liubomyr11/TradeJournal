@@ -7,11 +7,12 @@ import org.junit.Assert;
 import pages.HomePage;
 import pages.LoginPage;
 import utils.BrowserUtils;
+import utils.Driver;
 
 public class Home_Page {
     HomePage homepage = new HomePage();
     LoginPage login = new LoginPage();
-    BrowserUtils utils = new BrowserUtils();
+
 
     @Then("Logo is displayed")
     public void logo_is_displayed() {
@@ -45,8 +46,9 @@ homepage.finomGroupTab.isDisplayed();
     }
     @Then("User should be able to navigate to Finom Group website")
     public void user_should_be_able_to_navigate_to_finom_group_website() {
-        utils.wait(4);
-Assert.assertTrue(homepage.finomGroupPageLogo.isDisplayed());
+        BrowserUtils.wait(6);
+        Assert.assertEquals(homepage.finomTitle, Driver.getDriver().getTitle());
+       // Assert.assertEquals(homepage.finomGroupPageLogo.getAttribute("title"), "Home - Finom Group");
     }
 
     @Then("Slack Channel tab is displayed")
