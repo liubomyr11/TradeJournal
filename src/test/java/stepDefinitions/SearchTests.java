@@ -6,14 +6,18 @@ import pages.HomePage;
 import utils.BrowserUtils;
 
 public class SearchTests {
-
+    Login_Steps_Definition loginSteps = new Login_Steps_Definition();
     //===================================================================================
     //Scenario Outline: RC-30 Verify user see result after searching with valid credential
     HomePage HP = new HomePage();
-    @Given("user navigate the Homepage")
-    public void user_navigate_the_homepage() {
+    @Given ("User is on the Homepage after sign in")
+    public void User_is_on_the_Homepage_after_sign_in(){
+        loginSteps.user_is_on_login_page();
+        loginSteps.user_enters_valid_and_and_clicks_sign_in("Ulugbek", "SuperUlugbek123!");
         //verify if page is display label
         Assert.assertTrue(HP.labelHome.isDisplayed());
+
+
     }
     @When("user enters a value ORPR for Symbol and actual date")
     public void user_enters_a_value_orpr_for_symbol_and_actual_date() {
