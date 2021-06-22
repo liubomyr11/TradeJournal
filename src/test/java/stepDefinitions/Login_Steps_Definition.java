@@ -63,6 +63,8 @@ public class Login_Steps_Definition {
     public void user_should_see_sign_in_button() {
         Assert.assertTrue(BrowserUtils.isPresent(loginPage.signInButton));
     }
-
-
+    @Then("User should stay on LogIn page.")
+    public void user_should_stay_on_log_in_page() {
+        Assert.assertEquals(loginPage.pageTitle,Driver.getDriver().getTitle());
+    }
 }

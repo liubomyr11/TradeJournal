@@ -1,3 +1,4 @@
+@Smoke
 Feature: Logout functionality
 
   Scenario: User successfully log out from system
