@@ -35,6 +35,56 @@ public class HomePage {
     @FindBy(xpath = "//tr")
     public List<WebElement> ListOfAllRowsFromTable;
 
+    //created by Liubomyr
+    @FindBy (xpath= "//img[@src='https://www.pinclipart.com/picdir/middle/11-111719_clipart-arrows-graph-trading-icon-png-download.png']")
+    public WebElement logo;
+    @FindBy (xpath = "//a[text()='Finom Group']")
+    public WebElement finomGroupTab;
+    @FindBy (xpath = "//a[text()='Slack Channel']")
+    public WebElement slackChannelTab;
+    @FindBy (xpath = "//button[@id='signin_btn']")
+    public WebElement slackChannelPage;
+    @FindBy (xpath = "//a[@class='nav-link dropdown-toggle']")
+    public WebElement toolsTab;
+    @FindBy (xpath = "//a[@href='https://www.optionseducation.org/toolsoptionquotes/optionscalculator']")
+    public WebElement calculatorTab;
+    @FindBy(xpath = "//a[@href='https://finviz.com/']")
+    public WebElement todaysMarketTab;
+    @FindBy(id = "//[@id='navbarSupportedContent']/ul/li[4]/div/a[3]")
+    public WebElement converterTab;
+    @FindBy(className = "form-control mr-sm-2")
+    public WebElement searchBox;
+    @FindBy(name = "date")
+    public WebElement dateBox;
+    @FindBy(xpath = ("(//button[@class='btn btn-outline-success my-2 my-sm-0'])[2]"))
+    public WebElement logoutButton;
+    @FindBy(xpath = ("//a[@class='btn btn-primary btn-sm mb-3']"))
+    public WebElement addTradeButton;
 
-
+    @FindBy(css = (" thead tr th:nth-child(1)"))
+    public WebElement actionCol;
+    @FindBy(css = (" thead tr th:nth-child(2)"))
+    public WebElement symbolCol;
+    @FindBy(css = (" thead tr th:nth-child(3)"))
+    public WebElement openDateCol;
+    @FindBy(css = (" thead tr th:nth-child(4)"))
+    public WebElement entryCol;
+    @FindBy(css = (" thead tr th:nth-child(5)"))
+    public WebElement closeDateCol;
+    @FindBy(css = (" thead tr th:nth-child(6)"))
+    public WebElement exitCol;
+    @FindBy(css = (" thead tr th:nth-child(7)"))
+    public WebElement gainLossCol;
+    @FindBy(css = (" thead tr th:nth-child(8)"))
+    public WebElement action2Col;
+    @FindBy(xpath = ("//img[@title='Finom Group']"))
+    public WebElement finomGroupPageLogo;
+    @FindBy(xpath = ("//head[@id='head']/title"))
+    public WebElement calculatorPageLogo;
+    @FindBy(xpath = ("//a[@class='logo']"))
+    public WebElement finwizPageLogo;
 }
+
+
+
+
