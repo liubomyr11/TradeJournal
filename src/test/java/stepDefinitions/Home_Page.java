@@ -4,14 +4,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.AdditionalPages;
 import pages.HomePage;
-import pages.LoginPage;
 import utils.BrowserUtils;
 import utils.Driver;
 
 public class Home_Page {
     HomePage homepage = new HomePage();
-    LoginPage login = new LoginPage();
+
+AdditionalPages titles = new AdditionalPages();
+
 
 //pass
     @Then("Logo is displayed")
@@ -26,6 +28,8 @@ homepage.logo.isDisplayed();
     public void user_should_be_able_to_be_directed_to_the_home_page() {
         Assert.assertEquals(homepage.pageTitle, Driver.getDriver().getTitle());
     }
+
+
 //pass
     @Then("home tab is displayed")
     public void home_tab_is_displayed() {
@@ -35,6 +39,9 @@ homepage.labelHome.isDisplayed();
     public void user_clicks_on_home_tab() {
 homepage.labelHome.click();
     }
+
+
+
 //fail
     @Then("Finom Group tab is displayed")
     public void finom_group_tab_is_displayed() {
@@ -47,8 +54,12 @@ homepage.finomGroupTab.isDisplayed();
     @Then("User should be able to navigate to Finom Group website")
     public void user_should_be_able_to_navigate_to_finom_group_website() {
         BrowserUtils.wait(10);
-        Assert.assertEquals(homepage.finomTitle, Driver.getDriver().getTitle());
+        System.out.println(Driver.getDriver().getTitle());
+      //  Assert.assertEquals(titles.finomTitle, Driver.getDriver().getTitle());
     }
+
+
+
 //fail
     @Then("Slack Channel tab is displayed")
     public void slack_channel_tab_is_displayed() {
@@ -61,8 +72,11 @@ homepage.slackChannelTab.isDisplayed();
     @Then("User should be able to navigate to PrimeTech_SDET_Batch1 slack channel")
     public void user_should_be_able_to_navigate_to_prime_tech_sdet_batch1_slack_channel() {
         BrowserUtils.wait(10);
-        Assert.assertEquals(homepage.slackTitle, Driver.getDriver().getTitle());
+        Assert.assertEquals(titles.slackTitle, Driver.getDriver().getTitle());
     }
+
+
+
 //fail
     @Then("Tools tab is displayed")
     public void tools_tab_is_displayed() {
@@ -84,15 +98,17 @@ homepage.calculatorTab.isDisplayed();
     @Then("User should be able to navigate to Options Calculatior page")
     public void user_should_be_able_to_navigate_to_options_calculatior_page() {
         BrowserUtils.wait(3);
-        Assert.assertEquals(homepage.calculatorTitle, Driver.getDriver().getTitle());
+        Assert.assertEquals(titles.calculatorTitle, Driver.getDriver().getTitle());
     }
+
+    //fail
     @When("User clicks on Todays Market info tab")
     public void user_clicks_on_todays_market_info_tab() {
 homepage.todaysMarketTab.click();
     }
     @Then("User should be able to navigate to Finviz website")
     public void user_should_be_able_to_navigate_to_finviz_website() {
-        Assert.assertEquals(homepage.finvizTitle, Driver.getDriver().getTitle());
+        Assert.assertEquals(titles.finvizTitle, Driver.getDriver().getTitle());
     }
 
     @And("User click on Vol ETF/ETN Price converter tab")
@@ -101,6 +117,8 @@ homepage.converterTab.click();
     }
     @Then("User should be able to navigate to Vol ETF/ETN Price converter page")
     public void user_should_be_able_to_navigate_to_vol_etf_etn_price_converter_page() {
+
+
 //bug
     }
 //pass

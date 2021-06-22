@@ -13,10 +13,7 @@ public class HomePage {
            }
 
     public final String pageTitle = "Transactions";
-    public final String finomTitle ="Home - Finom Group";
-    public final String slackTitle ="Slack";
-    public final String calculatorTitle = "The Options Industry Council (OIC) - Optionscalculator";
-    public final String finvizTitle ="FINVIZ.com - Stock Screener";
+
 
     //Created by Beka
     @FindBy(xpath = "//a[text()='Home ']")
