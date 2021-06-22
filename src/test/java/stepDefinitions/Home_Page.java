@@ -80,50 +80,56 @@ Assert.assertTrue(homepage.calculatorPageLogo.isDisplayed());
     }
     @When("User clicks on Todays Market info tab")
     public void user_clicks_on_todays_market_info_tab() {
-
+homepage.todaysMarketTab.click();
     }
     @Then("User should be able to navigate to Finviz website")
     public void user_should_be_able_to_navigate_to_finviz_website() {
-
+Assert.assertTrue(homepage.finwizPageLogo.isDisplayed());
     }
 
     @And("User click on Vol ETF/ETN Price converter tab")
     public void user_click_on_vol_etf_etn_price_converter_tab() {
-
+homepage.converterTab.click();
     }
     @Then("User should be able to navigate to Vol ETF/ETN Price converter page")
     public void user_should_be_able_to_navigate_to_vol_etf_etn_price_converter_page() {
-
+//bug
     }
 
     @Then("Symbol search box is displayed")
     public void symbol_search_box_is_displayed() {
-
+homepage.symbolInput.isDisplayed();
     }
 
     @Then("textbox mm/dd/yyyy and calender date picker is displayed")
     public void textbox_mm_dd_yyyy_and_calender_date_picker_is_displayed() {
-
+homepage.dateInput.isDisplayed();
     }
 
     @Then("Search button is displayed")
     public void search_button_is_displayed() {
-
+homepage.searchButton.isDisplayed();
     }
 
     @Then("Logout button is displayed")
     public void logout_button_is_displayed() {
-
+homepage.logoutButton.isDisplayed();
     }
 
     @Then("Add trade button is displayed")
     public void add_trade_button_is_displayed() {
-
+homepage.addTradeButton.isDisplayed();
     }
-
 
     @Then("User should see able to all data table column names")
     public void user_should_see_able_to_all_data_table_column_names() {
-
+Assert.assertEquals(homepage.actionCol.getText(), "Action");
+        Assert.assertEquals(homepage.symbolCol.getText(), "Symbol");
+        Assert.assertEquals(homepage.openDateCol.getText(), "Open date");
+        Assert.assertEquals(homepage.entryCol.getText(), "Entry");
+        Assert.assertEquals(homepage.closeDateCol.getText(), "Close date");
+        Assert.assertEquals(homepage.exitCol.getText(), "Exit");
+        Assert.assertEquals(homepage.gainLossCol.getText(), "Gain/Loss");
+        Assert.assertEquals(homepage.action2Col.getText(), "Action");
     }
 }
