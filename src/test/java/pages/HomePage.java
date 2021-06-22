@@ -13,7 +13,11 @@ public class HomePage {
            }
 
     public final String pageTitle = "Transactions";
-    public final String finomTitle ="Finom Group | Site Wide Activity RSS Feed";
+    public final String finomTitle ="Home - Finom Group";
+    public final String slackTitle ="Slack";
+    public final String calculatorTitle = "The Options Industry Council (OIC) - Optionscalculator";
+    public final String finvizTitle ="FINVIZ.com - Stock Screener";
+
     //Created by Beka
     @FindBy(xpath = "//a[text()='Home ']")
     public WebElement labelHome;
@@ -42,25 +46,20 @@ public class HomePage {
     public WebElement finomGroupTab;
     @FindBy (xpath = "//a[text()='Slack Channel']")
     public WebElement slackChannelTab;
-    @FindBy (xpath = "//button[@id='signin_btn']")
-    public WebElement slackChannelPage;
     @FindBy (xpath = "//a[@class='nav-link dropdown-toggle']")
     public WebElement toolsTab;
-    @FindBy (xpath = "//a[@href='https://www.optionseducation.org/toolsoptionquotes/optionscalculator']")
+    @FindBy (xpath = "//a[text()='Options Calculator']")
     public WebElement calculatorTab;
     @FindBy(xpath = "//a[@href='https://finviz.com/']")
     public WebElement todaysMarketTab;
-    @FindBy(id = "//[@id='navbarSupportedContent']/ul/li[4]/div/a[3]")
+    @FindBy(xpath = "//a[text()='Vol ETF/ETN Price Converter']")
     public WebElement converterTab;
-    @FindBy(className = "form-control mr-sm-2")
-    public WebElement searchBox;
-    @FindBy(name = "date")
-    public WebElement dateBox;
     @FindBy(xpath = ("(//button[@class='btn btn-outline-success my-2 my-sm-0'])[2]"))
     public WebElement logoutButton;
     @FindBy(xpath = ("//a[@class='btn btn-primary btn-sm mb-3']"))
     public WebElement addTradeButton;
-
+    @FindBy(xpath = "//div[@class='dropdown-menu show']")
+    public WebElement toolsDropDown;
     @FindBy(css = (" thead tr th:nth-child(1)"))
     public WebElement actionCol;
     @FindBy(css = (" thead tr th:nth-child(2)"))
