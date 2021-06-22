@@ -1,5 +1,5 @@
 Feature: Stock Trade homepage components verification
-  User navigated to Stock Trade website and alredy in login page
+
 
   Scenario: User should be able to be directed to the home page by clicking on logo
   Given User is on the Homepage after sign in
@@ -11,7 +11,7 @@ Feature: Stock Trade homepage components verification
     Given User is on the Homepage after sign in
     Then home tab is displayed
     When User clicks on home tab
-    Then User should be able to be directed to the home page
+
 
   Scenario: User should be able to navigate to Finom Group website
     Given User is on the Homepage after sign in
@@ -29,7 +29,7 @@ Feature: Stock Trade homepage components verification
   Scenario: User should be able to navigate to Tools dropdown window
     Given User is on the Homepage after sign in
     Then Tools tab is displayed
-    When User click on Tools tab
+
     Then User should see Tools dropdown window
     And User click on Options Calculator tab
     Then User should be able to navigate to Options Calculatior page
@@ -37,42 +37,40 @@ Feature: Stock Trade homepage components verification
 
   Scenario: User should be able to navigate to Tools dropdown window
     Given  User is on the Homepage after sign in
-    Then User should see Tools dropdown window
     When User clicks on Todays Market info tab
     Then User should be able to navigate to Finviz website
 
   Scenario: User should be able to navigate to Tools dropdown window
     Given User is on the Homepage after sign in
-    Then User should see Tools dropdown window
     And User click on Vol ETF/ETN Price converter tab
     Then User should be able to navigate to Vol ETF/ETN Price converter page
 
 
   Scenario: User should be able to see Symbol search box, located to the right side of Tools tab
-    Given User on the Stock Trade homepage
+    Given  User is on the Homepage after sign in
     Then Symbol search box is displayed
 
 
   Scenario: User should be able to see textbox mm/dd/yyyy and calender date picker, located to the right side of Symbol search box
-    Given User on the Stock Trade homepage
+    Given  User is on the Homepage after sign in
     Then textbox mm/dd/yyyy and calender date picker is displayed
 
 
   Scenario: User should be able to see Search button, located to the right side of textbox mm/dd/yyyy
-    Given User on the Stock Trade homepage
+    Given  User is on the Homepage after sign in
     Then Search button is displayed
 
 
   Scenario: User should be able to see Logout button, located to the right side of Search button
-    Given User on the Stock Trade homepage
+    Given  User is on the Homepage after sign in
     Then Logout button is displayed
 
 
   Scenario: User should be able to see Add trade button, located underneath the global header.
-    Given User on the Stock Trade homepage
+    Given  User is on the Homepage after sign in
     Then Add trade button is displayed
 
 
   Scenario: User should be able to see names of each column on table
-    Given User on the Stock Trade homepage
+    Given  User is on the Homepage after sign in
     Then User should see able to all data table column names
