@@ -123,7 +123,7 @@ BrowserUtils.clickWithJS(homepage.todaysMarketTab);
         Assert.assertEquals(titles.finvizLink, Driver.getDriver().getCurrentUrl());
         BrowserUtils.switchBackToOriginWindow(originWindow);
     }
-
+//User click Tools tab should be able to navigate to converter website
     @And("User click on Vol ETF\\/ETN Price converter tab")
     public void user_click_on_vol_etf_etn_price_converter_tab() {
 
@@ -133,32 +133,32 @@ BrowserUtils.clickWithJS(homepage.todaysMarketTab);
 
 //bug
     }
-//pass
+// User should be able to see Symbol search box
     @Then("Symbol search box is displayed")
     public void symbol_search_box_is_displayed() {
 Assert.assertTrue(homepage.symbolInput.isDisplayed());
     }
-//pass
+//User should be able to see textbox mm/dd/yyyy
     @Then("textbox mm\\/dd\\/yyyy and calender date picker is displayed")
     public void textbox_mm_dd_yyyy_and_calender_date_picker_is_displayed() {
         Assert.assertTrue(homepage.dateInput.isDisplayed());
     }
-//pass
+//User should be able to see Search button
     @Then("Search button is displayed")
     public void search_button_is_displayed() {
         Assert.assertTrue(homepage.searchButton.isDisplayed());
     }
-//pass
+//User should be able to see Logout button
     @Then("Logout button is displayed")
     public void logout_button_is_displayed() {
         Assert.assertTrue(homepage.logoutButton.isDisplayed());
     }
-//pass
+//User should be able to see Add trade button
     @Then("Add trade button is displayed")
     public void add_trade_button_is_displayed() {
         Assert.assertTrue(homepage.addTradeButton.isDisplayed());
     }
-//pass
+//User should be able to see names of each column on table
     @Then("User should see able to all data table column names")
     public void user_should_see_able_to_all_data_table_column_names() {
 Assert.assertEquals(homepage.actionCol.getText(), "Action");
