@@ -11,14 +11,13 @@ import utils.Driver;
 
 public class Home_Page {
     HomePage homepage = new HomePage();
-
 AdditionalPages titles = new AdditionalPages();
 
 
 //pass
     @Then("Logo is displayed")
     public void logo_is_displayed() {
-homepage.logo.isDisplayed();
+Assert.assertTrue(homepage.logo.isDisplayed());
     }
     @When("User clicks on logo")
     public void user_clicks_on_logo() {
@@ -33,7 +32,7 @@ homepage.logo.isDisplayed();
 //pass
     @Then("home tab is displayed")
     public void home_tab_is_displayed() {
-homepage.labelHome.isDisplayed();
+Assert.assertTrue(homepage.labelHome.isDisplayed());
     }
     @When("User clicks on home tab")
     public void user_clicks_on_home_tab() {
@@ -45,7 +44,7 @@ homepage.labelHome.click();
 //fail
     @Then("Finom Group tab is displayed")
     public void finom_group_tab_is_displayed() {
-homepage.finomGroupTab.isDisplayed();
+Assert.assertTrue(homepage.finomGroupTab.isDisplayed());
     }
     @When("User click on Finom Group tab")
     public void user_click_on_finom_group_tab() {
@@ -54,8 +53,7 @@ homepage.finomGroupTab.isDisplayed();
     @Then("User should be able to navigate to Finom Group website")
     public void user_should_be_able_to_navigate_to_finom_group_website() {
         BrowserUtils.wait(10);
-        System.out.println(Driver.getDriver().getTitle());
-      //  Assert.assertEquals(titles.finomTitle, Driver.getDriver().getTitle());
+        Assert.assertEquals(titles.finomLink, Driver.getDriver().getCurrentUrl());
     }
 
 
@@ -63,7 +61,7 @@ homepage.finomGroupTab.isDisplayed();
 //fail
     @Then("Slack Channel tab is displayed")
     public void slack_channel_tab_is_displayed() {
-homepage.slackChannelTab.isDisplayed();
+Assert.assertTrue(homepage.slackChannelTab.isDisplayed());
     }
     @When("User click on Slack Channel tab")
     public void user_click_on_slack_channel_tab() {
@@ -72,7 +70,7 @@ homepage.slackChannelTab.isDisplayed();
     @Then("User should be able to navigate to PrimeTech_SDET_Batch1 slack channel")
     public void user_should_be_able_to_navigate_to_prime_tech_sdet_batch1_slack_channel() {
         BrowserUtils.wait(10);
-        Assert.assertEquals(titles.slackTitle, Driver.getDriver().getTitle());
+        Assert.assertTrue(homepage.slackChannelLogo.isDisplayed());
     }
 
 
@@ -80,7 +78,7 @@ homepage.slackChannelTab.isDisplayed();
 //fail
     @Then("Tools tab is displayed")
     public void tools_tab_is_displayed() {
-homepage.toolsTab.isDisplayed();
+Assert.assertTrue(homepage.toolsTab.isDisplayed());
     }
      @When("User click on Tools tab")
      public void user_click_on_tools_tab(){
@@ -93,12 +91,12 @@ Assert.assertTrue(homepage.toolsDropDown.isDisplayed());
     }
     @Then("User click on Options Calculator tab")
     public void user_click_on_options_calculator_tab() {
-homepage.calculatorTab.isDisplayed();
+homepage.calculatorTab.click();
     }
     @Then("User should be able to navigate to Options Calculatior page")
     public void user_should_be_able_to_navigate_to_options_calculatior_page() {
         BrowserUtils.wait(3);
-        Assert.assertEquals(titles.calculatorTitle, Driver.getDriver().getTitle());
+        Assert.assertEquals(titles.calculatorLink, Driver.getDriver().getCurrentUrl());
     }
 
     //fail
@@ -108,7 +106,7 @@ homepage.todaysMarketTab.click();
     }
     @Then("User should be able to navigate to Finviz website")
     public void user_should_be_able_to_navigate_to_finviz_website() {
-        Assert.assertEquals(titles.finvizTitle, Driver.getDriver().getTitle());
+        Assert.assertEquals(titles.finvizLink, Driver.getDriver().getCurrentUrl());
     }
 
     @And("User click on Vol ETF/ETN Price converter tab")
@@ -117,34 +115,32 @@ homepage.converterTab.click();
     }
     @Then("User should be able to navigate to Vol ETF/ETN Price converter page")
     public void user_should_be_able_to_navigate_to_vol_etf_etn_price_converter_page() {
-
-
 //bug
     }
 //pass
     @Then("Symbol search box is displayed")
     public void symbol_search_box_is_displayed() {
-homepage.symbolInput.isDisplayed();
+Assert.assertTrue(homepage.symbolInput.isDisplayed());
     }
 //pass
     @Then("textbox mm\\/dd\\/yyyy and calender date picker is displayed")
     public void textbox_mm_dd_yyyy_and_calender_date_picker_is_displayed() {
-homepage.dateInput.isDisplayed();
+        Assert.assertTrue(homepage.dateInput.isDisplayed());
     }
 //pass
     @Then("Search button is displayed")
     public void search_button_is_displayed() {
-homepage.searchButton.isDisplayed();
+        Assert.assertTrue(homepage.searchButton.isDisplayed());
     }
 //pass
     @Then("Logout button is displayed")
     public void logout_button_is_displayed() {
-homepage.logoutButton.isDisplayed();
+        Assert.assertTrue(homepage.logoutButton.isDisplayed());
     }
 //pass
     @Then("Add trade button is displayed")
     public void add_trade_button_is_displayed() {
-homepage.addTradeButton.isDisplayed();
+        Assert.assertTrue(homepage.addTradeButton.isDisplayed());
     }
 //pass
     @Then("User should see able to all data table column names")

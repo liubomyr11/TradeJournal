@@ -52,6 +52,8 @@ public class HomePage {
     public WebElement finomGroupTab;
     @FindBy (xpath = "//a[text()='Slack Channel']")
     public WebElement slackChannelTab;
+    @FindBy (xpath = "//img[@alt='Slack']")
+    public WebElement slackChannelLogo;
     @FindBy (xpath = "//a[@class='nav-link dropdown-toggle']")
     public WebElement toolsTab;
     @FindBy (xpath = "//a[text()='Options Calculator']")
@@ -64,7 +66,7 @@ public class HomePage {
     public WebElement logoutButton;
     @FindBy(xpath = ("//a[@class='btn btn-primary btn-sm mb-3']"))
     public WebElement addTradeButton;
-    @FindBy(xpath = "//div[@class='dropdown-menu show']")
+    @FindBy(xpath = "//div[@aria-labelledby='navbarDropdown']")
     public WebElement toolsDropDown;
     @FindBy(css = (" thead tr th:nth-child(1)"))
     public WebElement actionCol;
@@ -82,12 +84,7 @@ public class HomePage {
     public WebElement gainLossCol;
     @FindBy(css = (" thead tr th:nth-child(8)"))
     public WebElement action2Col;
-    @FindBy(xpath = ("//title[text()='Home - Finom Group']"))
-    public WebElement finomGroupPageLogo;
-    @FindBy(xpath = ("//head[@id='head']/title"))
-    public WebElement calculatorPageLogo;
-    @FindBy(xpath = ("//a[@class='logo']"))
-    public WebElement finwizPageLogo;
+
 }
 
 
