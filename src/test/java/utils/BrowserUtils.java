@@ -1,6 +1,7 @@
 package utils;
 
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
@@ -43,6 +44,10 @@ public class BrowserUtils {
         // Switch back to original browser (first window)
         Driver.getDriver().switchTo().window( originWindow );
 
+    }
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
 }
 

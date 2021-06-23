@@ -14,7 +14,7 @@ public class Home_Page {
 AdditionalPages titles = new AdditionalPages();
 
 
-//pass
+// User click logo and should be able to be directed to the home page
     @Then("Logo is displayed")
     public void logo_is_displayed() {
 Assert.assertTrue(homepage.logo.isDisplayed());
@@ -29,7 +29,7 @@ Assert.assertTrue(homepage.logo.isDisplayed());
     }
 
 
-//pass
+//User click home tab and should be able to be directed to the home page
     @Then("home tab is displayed")
     public void home_tab_is_displayed() {
 Assert.assertTrue(homepage.labelHome.isDisplayed());
@@ -41,7 +41,7 @@ homepage.labelHome.click();
 
 
 
-//fail
+//User click finom tab and should be able to navigate to Finom Group website
     @Then("Finom Group tab is displayed")
     public void finom_group_tab_is_displayed() {
 Assert.assertTrue(homepage.finomGroupTab.isDisplayed());
@@ -61,7 +61,7 @@ Assert.assertTrue(homepage.finomGroupTab.isDisplayed());
 
 
 
-//pass
+//User click Slack tab and should be able to navigate to Slack Channel
     @Then("Slack Channel tab is displayed")
     public void slack_channel_tab_is_displayed() {
 Assert.assertTrue(homepage.slackChannelTab.isDisplayed());
@@ -81,7 +81,7 @@ Assert.assertTrue(homepage.slackChannelTab.isDisplayed());
 
 
 
-//fail
+//User click Tools tab and calculator tab and should be able to navigate to calculator website
     @Then("Tools tab is displayed")
     public void tools_tab_is_displayed() {
 Assert.assertTrue(homepage.toolsTab.isDisplayed());
@@ -92,31 +92,29 @@ Assert.assertTrue(homepage.toolsTab.isDisplayed());
      }
     @Then("User should see Tools dropdown window")
     public void user_should_see_tools_dropdown_window() {
-        BrowserUtils.wait(2);
+        BrowserUtils.wait(4);
 Assert.assertTrue(homepage.toolsDropDown.isDisplayed());
     }
     @Then("User click on Options Calculator tab")
     public void user_click_on_options_calculator_tab() {
 homepage.calculatorTab.click();
     }
-    @Then("User should be able to navigate to Options Calculatior page")
-    public void user_should_be_able_to_navigate_to_options_calculatior_page() {
+    @Then("User should be able to navigate to Options Calculator page")
+    public void user_should_be_able_to_navigate_to_options_calculator_page() {
         String originWindow = Driver.getDriver().getWindowHandle();
         BrowserUtils.switchToNewWindow();
         Assert.assertEquals(titles.calculatorLink, Driver.getDriver().getCurrentUrl());
         BrowserUtils.switchBackToOriginWindow(originWindow);
     }
 
-    //fail
+    //User click Tools tab should be able to navigate to finviz website
     @When("User clicks on Todays Market info tab")
     public void user_clicks_on_todays_market_info_tab() {
+        BrowserUtils.wait(4);
         homepage.toolsTab.click();
-        BrowserUtils.wait(3);
-homepage.todaysMarketTab.click();
-        String originWindow = Driver.getDriver().getWindowHandle();
-        BrowserUtils.switchToNewWindow();
-        Assert.assertEquals(titles.calculatorLink, Driver.getDriver().getCurrentUrl());
-        BrowserUtils.switchBackToOriginWindow(originWindow);
+        BrowserUtils.wait(4);
+BrowserUtils.clickWithJS(homepage.todaysMarketTab);
+
     }
     @Then("User should be able to navigate to Finviz website")
     public void user_should_be_able_to_navigate_to_finviz_website() {

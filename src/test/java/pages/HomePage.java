@@ -53,8 +53,10 @@ public class HomePage {
     public WebElement toolsTab;
     @FindBy (xpath = "//a[text()='Options Calculator']")
     public WebElement calculatorTab;
+
     @FindBy(xpath = "//a[@href='https://finviz.com/']")
     public WebElement todaysMarketTab;
+
     @FindBy(xpath = "//a[text()='Vol ETF/ETN Price Converter']")
     public WebElement converterTab;
     @FindBy(xpath = ("(//button[@class='btn btn-outline-success my-2 my-sm-0'])[2]"))
