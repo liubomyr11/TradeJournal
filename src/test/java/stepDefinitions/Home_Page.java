@@ -128,15 +128,11 @@ homepage.todaysMarketTab.click();
 
     @And("User click on Vol ETF\\/ETN Price converter tab")
     public void user_click_on_vol_etf_etn_price_converter_tab() {
-//        homepage.toolsTab.click();
-//        BrowserUtils.wait(3);
-//homepage.converterTab.click();
+
     }
     @Then("User should be able to navigate to Vol ETF\\/ETN Price converter page")
     public void user_should_be_able_to_navigate_to_vol_etf_etn_price_converter_page() {
-//        String originWindow = Driver.getDriver().getWindowHandle();
-//        BrowserUtils.switchToNewWindow();
-//        BrowserUtils.switchBackToOriginWindow(originWindow);
+
 //bug
     }
 //pass
