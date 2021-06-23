@@ -37,6 +37,7 @@ Feature: Stock Trade homepage components verification
 
   Scenario: User should be able to navigate to Tools dropdown window
     Given  User is on the Homepage after sign in
+    Then User click on Tools tab
     When User clicks on Todays Market info tab
     Then User should be able to navigate to Finviz website
 

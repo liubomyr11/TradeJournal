@@ -52,13 +52,16 @@ Assert.assertTrue(homepage.finomGroupTab.isDisplayed());
     }
     @Then("User should be able to navigate to Finom Group website")
     public void user_should_be_able_to_navigate_to_finom_group_website() {
-        BrowserUtils.wait(10);
+        // Store the current window handle
+        String originWindow = Driver.getDriver().getWindowHandle();
+        BrowserUtils.switchToNewWindow();
         Assert.assertEquals(titles.finomLink, Driver.getDriver().getCurrentUrl());
+        BrowserUtils.switchBackToOriginWindow(originWindow);
     }
 
 
 
-//fail
+//pass
     @Then("Slack Channel tab is displayed")
     public void slack_channel_tab_is_displayed() {
 Assert.assertTrue(homepage.slackChannelTab.isDisplayed());
@@ -69,8 +72,11 @@ Assert.assertTrue(homepage.slackChannelTab.isDisplayed());
     }
     @Then("User should be able to navigate to PrimeTech_SDET_Batch1 slack channel")
     public void user_should_be_able_to_navigate_to_prime_tech_sdet_batch1_slack_channel() {
-        BrowserUtils.wait(10);
+        // Store the current window handle
+        String originWindow = Driver.getDriver().getWindowHandle();
+        BrowserUtils.switchToNewWindow();
         Assert.assertTrue(homepage.slackChannelLogo.isDisplayed());
+        BrowserUtils.switchBackToOriginWindow(originWindow);
     }
 
 
@@ -95,26 +101,42 @@ homepage.calculatorTab.click();
     }
     @Then("User should be able to navigate to Options Calculatior page")
     public void user_should_be_able_to_navigate_to_options_calculatior_page() {
-        BrowserUtils.wait(3);
+        String originWindow = Driver.getDriver().getWindowHandle();
+        BrowserUtils.switchToNewWindow();
         Assert.assertEquals(titles.calculatorLink, Driver.getDriver().getCurrentUrl());
+        BrowserUtils.switchBackToOriginWindow(originWindow);
     }
 
     //fail
     @When("User clicks on Todays Market info tab")
     public void user_clicks_on_todays_market_info_tab() {
+        homepage.toolsTab.click();
+        BrowserUtils.wait(3);
 homepage.todaysMarketTab.click();
+        String originWindow = Driver.getDriver().getWindowHandle();
+        BrowserUtils.switchToNewWindow();
+        Assert.assertEquals(titles.calculatorLink, Driver.getDriver().getCurrentUrl());
+        BrowserUtils.switchBackToOriginWindow(originWindow);
     }
     @Then("User should be able to navigate to Finviz website")
     public void user_should_be_able_to_navigate_to_finviz_website() {
+        String originWindow = Driver.getDriver().getWindowHandle();
+        BrowserUtils.switchToNewWindow();
         Assert.assertEquals(titles.finvizLink, Driver.getDriver().getCurrentUrl());
+        BrowserUtils.switchBackToOriginWindow(originWindow);
     }
 
-    @And("User click on Vol ETF/ETN Price converter tab")
+    @And("User click on Vol ETF\\/ETN Price converter tab")
     public void user_click_on_vol_etf_etn_price_converter_tab() {
-homepage.converterTab.click();
+//        homepage.toolsTab.click();
+//        BrowserUtils.wait(3);
+//homepage.converterTab.click();
     }
-    @Then("User should be able to navigate to Vol ETF/ETN Price converter page")
+    @Then("User should be able to navigate to Vol ETF\\/ETN Price converter page")
     public void user_should_be_able_to_navigate_to_vol_etf_etn_price_converter_page() {
+//        String originWindow = Driver.getDriver().getWindowHandle();
+//        BrowserUtils.switchToNewWindow();
+//        BrowserUtils.switchBackToOriginWindow(originWindow);
 //bug
     }
 //pass

@@ -32,6 +32,16 @@ public class BrowserUtils {
             return element.isDisplayed();
         } catch (Exception e) { return false; }
     }
-
+    public static void switchToNewWindow(){
+        // Switch to new window opened
+        for(String winHandle : Driver.getDriver().getWindowHandles()){
+            Driver.getDriver().switchTo().window(winHandle);
+        }}
+    public static void switchBackToOriginWindow(String originWindow) {
+        // Close the new window, if that window no more required
+        Driver.getDriver().close();
+        // Switch back to original browser (first window)
+        Driver.getDriver().switchTo().window( originWindow );
+    }
 }
 
