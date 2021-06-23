@@ -42,6 +42,7 @@ public class BrowserUtils {
         Driver.getDriver().close();
         // Switch back to original browser (first window)
         Driver.getDriver().switchTo().window( originWindow );
+
     }
 }
 
