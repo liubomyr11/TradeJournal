@@ -22,15 +22,12 @@ public class HomePage {
     //Created by Beka
     @FindBy(xpath = "//a[text()='Home ']")
     public WebElement labelHome;
-
     //Created by Beka
     @FindBy(name= "symbol")
     public WebElement symbolInput;
-
     //Created by Beka
     @FindBy(name= "date")
     public WebElement dateInput;
-
     //Created by Beka
     @FindBy(xpath = "//button[text()='Search']")
     public WebElement searchButton;
@@ -38,10 +35,8 @@ public class HomePage {
     //Created by Beka
     @FindBy(xpath = "//td[text()='ORPR']")
     public WebElement secondColomFirsRowFromTable;
-
     @FindBy(xpath = "//thead")
     public WebElement headerOfTable;
-
     @FindBy(xpath = "//tr")
     public List<WebElement> ListOfAllRowsFromTable;
 
@@ -70,7 +65,7 @@ public class HomePage {
     public WebElement toolsDropDown;
     @FindBy(css = (" thead tr th:nth-child(1)"))
     public WebElement actionCol;
-    @FindBy(css = (" thead tr th:nth-child(2)"))
+    @FindBy(xpath= ("//th[@style='width: 150px; word-wrap: break-word']"))
     public WebElement symbolCol;
     @FindBy(css = (" thead tr th:nth-child(3)"))
     public WebElement openDateCol;
@@ -80,7 +75,7 @@ public class HomePage {
     public WebElement closeDateCol;
     @FindBy(css = (" thead tr th:nth-child(6)"))
     public WebElement exitCol;
-    @FindBy(css = (" thead tr th:nth-child(7)"))
+    @FindBy(xpath = ("//thead[@class='thead-dark']//th[text()='Gain/Loss']"))
     public WebElement gainLossCol;
     @FindBy(css = (" thead tr th:nth-child(8)"))
     public WebElement action2Col;
